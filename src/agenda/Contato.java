@@ -4,6 +4,7 @@ import java.util.*;
 public abstract class Contato {
 	Scanner in = new Scanner(System.in);
 	
+
 	protected String nome;
 	protected String sobrenome;
 	protected String tipo;
