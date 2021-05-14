@@ -8,4 +8,8 @@ public class Main {
 		//Exibir Pessoal, Profissional, Eventos
 		//Arrumar data em evento parte Exibir 
 	}
+	
+	public void encerrar() {
+		System.out.printf("Já era");
+	}
 }

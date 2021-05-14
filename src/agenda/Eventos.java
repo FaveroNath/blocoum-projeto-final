@@ -5,6 +5,7 @@ import java.util.Scanner;
 public class Eventos extends Contato{
 	private int duracao;
 	private int horario;
+	private int data;
 	private String tema;
 	private String descricao;
 	
@@ -28,8 +29,10 @@ public class Eventos extends Contato{
 		System.out.println("Qual o endereço do eventos?");
 		setEndereco(leia.nextLine());
 		System.out.println("Qual a duração, em horas, do eventos?");
-		//this.setDuracao(leia.nextInt());
 		validarInt();
+		System.out.println("Qual a data do evento? (ddmmaaaa)");
+		this.setData(leia.nextInt());
+		//this.setDuracao(leia.nextInt());
 		System.out.println("Informe o horário de início do evento (hhmmss):");
 		validarHora(leia.nextInt());
 		leia.nextLine();
@@ -40,15 +43,20 @@ public class Eventos extends Contato{
 	@Override
 	public void getContato() {
 		//Visualizar
-		System.out.printf("O evento %s acontecera em data, localizado na %s ", getNome(), getEndereco());
+		/*System.out.printf("O evento %s acontecera em data, localizado na %s ", getNome(), getEndereco());
 		System.out.printf("\no evento tem previsão de início para as %s com duração esperada de %d hora(s).", formatarHora(getHorario()), this.getDuracao());
-		System.out.printf("\nLembre-se que '%s' e o tema %s", this.getDescricao(), validarTema(this.getTema()));
+		System.out.printf("\nLembre-se que '%s' e o tema %s", this.getDescricao(), validarTema(this.getTema()));*/
+
+		System.out.printf("O evento %s acontecerá em %s, localizado na %s ", getNome(), formatarData(this.getData()), getEndereco());
+		System.out.printf("\no evento tem previsão de início para as %s com duração esperada de %d hora(s).", formatarHora(getHorario()), this.getDuracao());
+		System.out.printf("\nLembre-se que '%s' e %s", this.getDescricao(), validarTema(this.getTema()));
+
 	}
 	
 	public String validarTema(String tema) {
 		String msg;
-		if(tema.isBlank() || tema.isEmpty()) msg = "Não tem tema definido";
-		else msg = tema;
+		if(tema.isBlank() || tema.isEmpty()) msg = "não tem tema definido";
+		else msg = "o tema é " + tema;
 		return msg;
 	}
 	
@@ -103,14 +111,14 @@ public class Eventos extends Contato{
 	//O mÃ©todo pega o valor do atributo 'data' e através de algumas operações
 	//atribumois, para cada variÃ¡vel (ano, mês e dia) seu valor conforme a data que foi 
 	//informada. Posteriormente, formatamos a data conforme padrÃ£o dd/mm/aaaa.
-	/*public String formatarData() {
+	public String formatarData(int d) {
 		int dia, mes, ano;
-		ano = data % 10000;
-		mes = (data / 10000) % 10;
-		dia = (data / 10000) / 100;
+		ano = d % 10000;
+		mes = (d / 10000) % 10;
+		dia = (d / 10000) / 100;
 		String dataFormatada = String.format("%02d/%02d/%d", dia, mes, ano);
 		return dataFormatada;
-	}*/
+	}
 	
 	//Getters e Setters dos atributos da classe Evento
 	public int getDuracao() {
@@ -135,6 +143,14 @@ public class Eventos extends Contato{
 
 	public void setTema(String tema) {
 		this.tema = tema;
+	}
+	
+	public int getData() {
+		return data;
+	}
+	
+	public void setData(int data) {
+		this.data = data;
 	}
 
 	public String getDescricao() {
