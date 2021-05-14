@@ -41,7 +41,6 @@ public class Pessoal extends Contato {
 	@Override
 	public void getContato(){
 		String nomeCompleto = nome + " " + sobrenome;
-		
 		System.out.printf("Nome: %s\nTelefone: %s\nE-mail: %s\nEndereço: "
 				+ "%s\nIdade: %d\nSexo: %s\nRede "
 				+ "Social: %s",nomeCompleto, telefone,email,endereco,idade,sexo,redesocial);
@@ -51,7 +50,7 @@ public class Pessoal extends Contato {
 		idade = in.nextInt();
 		while(idade<=0 || idade>110)
 		{
-			System.out.printf("\nIDADE INVÁLIDA! Insira novamente!");
+			System.out.printf("\nIDADE INVÁLIDA! Insira novamente");
 			idade = in.nextInt();
 		}
 		setIdade(idade);

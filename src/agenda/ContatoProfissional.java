@@ -1,19 +1,15 @@
 	package agenda;
 	
-	import java.text.NumberFormat;
-	
 	public class ContatoProfissional extends Contato {
 		
 	
 		private String cargo;
-		//private double salario;
 		private String setor;
 		private String nomeEmpresa;
 		
 	
 		public ContatoProfissional(String nome, String telefone) {
 			super(nome, telefone);
-			// TODO Auto-generated constructor stub
 		}
 		
 		
@@ -46,13 +42,7 @@
 			setNomeEmpresa(in.nextLine());
 		}
 		
-		/*public String formataSalario() {
-			NumberFormat nf = NumberFormat.getCurrencyInstance();
-			nf.setMinimumFractionDigits(2);
-			String formatoSalario = nf.format(salario);
-			return formatoSalario;
-		}*/
-		
+	
 		public String getCargo() {
 			return cargo;
 		}
@@ -78,3 +68,7 @@
 		}
 		
 	}
+
+	
+
+	

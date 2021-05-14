@@ -40,12 +40,13 @@ public abstract class Contato {
 	/*public void visualizarContato() {
 		String nomeCompleto = this.nome + this.sobrenome;
 		System.out.printf("Nome: %s\nTelefone: %s\nE-mail:"
-				+ " %s\nEndereï¿½o: %s\n",nomeCompleto,telefone,email,endereco);
+				+ " %s\nEndereÃ¯Â¿Â½o: %s\n",nomeCompleto,telefone,email,endereco);
 	}*/
 	
 	public void verificaEmail(String email) {
 		int validaEmail = email.indexOf("@");
 		while(validaEmail == -1) {
+
 			System.out.println("***********\nE-mail inválido, verifique se possui o @\n***************");
 			email = in.nextLine();
 			validaEmail = email.indexOf("@");
@@ -63,6 +64,7 @@ public abstract class Contato {
 
 	public void verificaString(String nome) {
 		while(nome.isEmpty()) {
+
 			System.out.println("Este campo está vazio, por favro digite algo!!!!");
 			nome = in.nextLine();
 		}

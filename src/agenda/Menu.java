@@ -40,8 +40,10 @@ public class Menu {
 				case 3:
 					manipularEventos();
 					break;
+				
 				default:
 					System.out.printf("\nFinalizando...");
+					op = 0;
 					
 			}
 		} while(op != 0);
@@ -98,6 +100,7 @@ public class Menu {
 							manipularContatoProfissional();
 						}
 					}
+
 					System.out.println("Contato não encontrado!");
 					manipularContatoProfissional();
 					break;
@@ -106,8 +109,11 @@ public class Menu {
 					break;
 				default:
 					System.out.printf("\nFinalizando...");
+					op = 0;
 			}
+			
 		} while(op != 0);
+		
 		escolherEntrada();
 	}
 	
@@ -170,6 +176,7 @@ public class Menu {
 					break;
 				default:
 					System.out.printf("\nFinalizando...");
+					//op = 0;
 			}
 		} while(op != 0);
 		escolherEntrada();
@@ -235,11 +242,11 @@ public class Menu {
 					break;
 				default:
 					System.out.printf("\nFinalizando...");
-					op = 1;
+					//op = 0;
 			}
 		} while(op != 0);
-		
 		escolherEntrada();
 	}
-	
 }
+	
+
