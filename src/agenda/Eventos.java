@@ -9,10 +9,12 @@ public class Eventos extends Contato{
 	
 	Scanner leia = new Scanner(System.in);
 	
-	//Cria√ß√£o do m√©todo construtor
+	//CriaÁ„o do mÈtodo construtor
 	public Eventos(String nome, String endereco, int duracao, int horario) {
 		super(nome, endereco);
 	}
+	
+	
 	
 	@Override
 	public void setContato() {
@@ -20,13 +22,13 @@ public class Eventos extends Contato{
 		System.out.println("Informe os dados que deseja cadastrar:");
 		System.out.println("Qual o nome do evento?");
 		setNome(leia.nextLine());
-		System.out.println("Informe uma breve descri√ß√£o do evento");
+		System.out.println("Informe uma breve descriÁ„o do evento");
 		this.setDescricao(leia.nextLine());
-		System.out.println("Qual o endere√ßo do eventos?");
+		System.out.println("Qual o endereÁo do eventos?");
 		setEndereco(leia.nextLine());
-		System.out.println("Qual a dura√ß√£o, em horas, do eventos?");
+		System.out.println("Qual a duraÁ„o, em horas, do eventos?");
 		this.setDuracao(leia.nextInt());
-		System.out.println("Informe o hor√°rio de in√≠cio do evento (hh:mm:ss):");
+		System.out.println("Informe o hor·rio de inÌcio do evento (hh:mm:ss):");
 		validarHora(leia.nextInt());
 		leia.nextLine();
 		System.out.println("Qual o tema do evento?");
@@ -36,14 +38,14 @@ public class Eventos extends Contato{
 	@Override
 	public void getContato() {
 		//Visualizar
-		System.out.printf("O evento %s acontecer√° em data, localizado na %s ", getNome(), getEndereco());
-		System.out.printf("\no evento tem previs√£o de in√≠cio para as %s com dura√ß√£o esperada de %d hora(s).", formatarHora(getHorario()), this.getDuracao());
+		System.out.printf("O evento %s acontecera em data, localizado na %s ", getNome(), getEndereco());
+		System.out.printf("\no evento tem previs„o de inÌcio para as %s com duraÁ„o esperada de %d hora(s).", formatarHora(getHorario()), this.getDuracao());
 		System.out.printf("\nLembre-se que '%s' e o tema %s", this.getDescricao(), validarTema(this.getTema()));
 	}
 	
 	public String validarTema(String tema) {
 		String msg;
-		if(tema.isBlank() || tema.isEmpty()) msg = "n√£o tem tema definido";
+		if(tema.isBlank() || tema.isEmpty()) msg = "N„o tem tema definido";
 		else msg = tema;
 		return msg;
 	}

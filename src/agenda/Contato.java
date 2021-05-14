@@ -11,16 +11,17 @@ public abstract class Contato {
 	protected String telefone;
 	protected String email;
 	protected String endereco;
-	protected int id;
+
 	
 	abstract public void setContato();
 	abstract public void getContato();
+	
 
 	//buscarContato
 	//excluirContato
 	//definir tipo Date
 	
-	//Sigest√µes: bloquearContato, favoritarContanto
+	
 	
 	public Contato(String nome, String telefone) {
 		
@@ -45,7 +46,7 @@ public abstract class Contato {
 	public void verificaEmail(String email) {
 		int validaEmail = email.indexOf("@");
 		while(validaEmail == -1) {
-			System.out.println("***********\nE-mail invalido, verifique se possui o @\n***************");
+			System.out.println("***********\nE-mail inv·lido, verifique se possui o @\n***************");
 			email = in.nextLine();
 			validaEmail = email.indexOf("@");
 		}
@@ -54,7 +55,7 @@ public abstract class Contato {
 	
 	public void verificaTelefone(String telefone) {
 		while(telefone.length() != 12) {
-			System.out.println("**********\nTelefone Invalido, digite novamente!!!!\n************");
+			System.out.println("**********\nTelefone Inv·lido, digite novamente!!!!\n************");
 			telefone = in.nextLine();
 		}
 		setTelefone(telefone);
@@ -62,7 +63,7 @@ public abstract class Contato {
 
 	public void verificaString(String nome) {
 		while(nome.isEmpty()) {
-			System.out.println("Este campo est√° v√°zio, por favro digite algo!!!!");
+			System.out.println("Este campo est· vazio, por favro digite algo!!!!");
 			nome = in.nextLine();
 		}
 		setNome(nome);
@@ -74,6 +75,7 @@ public abstract class Contato {
 		return nome;
 	}
 
+	
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
@@ -82,6 +84,10 @@ public abstract class Contato {
 		return sobrenome;
 	}
 
+	public String getNomeCompleto() {
+		return  nome + " " + sobrenome;
+	}
+	
 	public void setSobrenome(String sobrenome) {
 		this.sobrenome = sobrenome;
 	}
